@@ -5,11 +5,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:8.1.2' // match your app
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$library.kotlin"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$library.navigation"
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // latest version
+
     }
 }
 
@@ -17,7 +17,7 @@ allprojects {
     apply from: "$rootDir/version.gradle"
     repositories {
         google()
-        jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
