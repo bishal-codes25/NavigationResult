@@ -1,22 +1,27 @@
+// Root-level build.gradle
 buildscript {
     apply from: "$rootDir/version.gradle"
+
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.2' // match your app
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$library.kotlin"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$library.navigation"
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // latest version
 
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${library.kotlin}"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${library.navigation}"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     apply from: "$rootDir/version.gradle"
+
     repositories {
         google()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
     }
 }
